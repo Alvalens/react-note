@@ -1,19 +1,13 @@
 import { Component } from "react";
 import Card from "./components/Card";
 import Form from "./components/Form";
+import { getInitialData } from "./utils/initialData";
 
 class NoteApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       notes: [
-        {
-          id: 1,
-          title: "Babel",
-          body: "Babel is an open-source tool used to transform ECMAScript 2015+ syntax into a compatible version for older JavaScript engines. It is often used with the latest syntax, including JSX.",
-          archived: false,
-          createdAt: "2022-04-14T04:27:34.572Z",
-        },
       ],
       newNote: {
         title: "",
@@ -23,6 +17,9 @@ class NoteApp extends Component {
     };
 }
 
+  componentDidMount() {
+    this.setState({ notes: getInitialData() });
+  }
 	// Handle form submission to add a new note
 	handleAddNote = (e) => {
 		e.preventDefault();
