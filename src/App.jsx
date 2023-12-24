@@ -3,22 +3,25 @@ import Card from "./components/Card";
 import Form from "./components/Form";
 
 class NoteApp extends Component {
-	state = {
-		notes: [
-			{
-				id: 1,
-				title: "Babel",
-				body: "Babel is an open-source tool used to transform ECMAScript 2015+ syntax into a compatible version for older JavaScript engines. It is often used with the latest syntax, including JSX.",
-				archived: false,
-				createdAt: "2022-04-14T04:27:34.572Z",
-			},
-		],
-		newNote: {
-			title: "",
-			body: "",
-		},
-		titleCount: 0,
-	};
+  constructor(props) {
+    super(props);
+    this.state = {
+      notes: [
+        {
+          id: 1,
+          title: "Babel",
+          body: "Babel is an open-source tool used to transform ECMAScript 2015+ syntax into a compatible version for older JavaScript engines. It is often used with the latest syntax, including JSX.",
+          archived: false,
+          createdAt: "2022-04-14T04:27:34.572Z",
+        },
+      ],
+      newNote: {
+        title: "",
+        body: "",
+      },
+      titleCount: 0,
+    };
+}
 
 	// Handle form submission to add a new note
 	handleAddNote = (e) => {
@@ -52,8 +55,8 @@ class NoteApp extends Component {
 			let titleCount = value.length;
 			this.setState({ titleCount });
 		}
-		if (this.state.titleCount > 32) {
-			alert("Title should not be more than 32 characters");
+		if (this.state.titleCount > 50) {
+			alert("Title should not be more than 50 characters");
 			return;
 		}
 		this.setState((prevState) => ({

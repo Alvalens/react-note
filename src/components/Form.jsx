@@ -12,7 +12,7 @@ class Form extends Component {
 				<h1 className="text-5xl">Personal Note-taking App</h1>
 				<form onSubmit={handleAddNote} className="flex flex-col w-full">
 					<div className="mt-10 mb-3 w-full">
-						<p className="text-xs text-gray-400">{titleCount}/32</p>
+						<p className="text-xs text-gray-400">{titleCount}/50</p>
 						<input
 							type="text"
 							name="title"
